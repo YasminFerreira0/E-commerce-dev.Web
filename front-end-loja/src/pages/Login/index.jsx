@@ -9,6 +9,15 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    const handleLogin = () => {
+        if (email && password) {
+            localStorage.setItem("auth", "true");
+            navigate("/dashboard");
+        } else {
+            alert("Preencha todos os campos.");
+        }
+    };
+
     return (
         <>
             <NavLogo />
@@ -31,7 +40,10 @@ export default function Login() {
                         />
                     </label>
 
-                    <button type="submit">Entrar</button>
+                    <button type="submit" onClick={e => {
+                    e.preventDefault();
+                    handleLogin();
+                }}>Entrar</button>
 
                     <p><a href="#">Esqueceu sua senha?</a></p>
 

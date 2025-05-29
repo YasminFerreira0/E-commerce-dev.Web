@@ -28,7 +28,7 @@ export default function CadastroUsuario() {
                         <input type="password" />
                     </label>
 
-                    <button type="submit">Criar conta</button>
+                    <button type="submit" onClick={() => navigate("/login")}>Criar conta</button>
                     <p>Já tem conta? <a onClick={() => navigate("/login")}>Entrar</a></p>
                 </form>
             </div>

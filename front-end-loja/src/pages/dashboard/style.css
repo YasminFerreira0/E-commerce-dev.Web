@@ -1,0 +1,47 @@
+.sideBar{
+    width: 20vw;
+    height: 100vh;
+    background-color: #f4f4f4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+/*.logoDash {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #343a40;
+    font-size: 0.9rem;
+    gap: 10px;
+    cursor: default;
+}
+
+.logoDash b {
+    color: #2A7AE4;
+}*/
+
+.sideBar h2 {
+    margin: 0;
+    padding: 25px 0;
+    font-size: 2rem;
+    color: #303030;
+    font-weight: bold;
+    cursor: default;
+}
+.sideBar ul {
+    list-style: none;
+    padding: 0;
+}
+.sideBar ul li {
+    margin: 15px 0;
+}
+.sideBar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+.sideBar ul li a:hover {
+    color: #007bff;
+}
