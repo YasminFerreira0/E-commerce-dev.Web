@@ -1,13 +1,14 @@
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import Cabecalho from './components/cabecalho'
-import Carrinho from './components/carrinho'
-import Produtos from './components/produtos'
+import Rotas from './routers/rotas'
 
 function App() {
 
   return (
     <>
-    <Produtos />
+    <BrowserRouter>
+      <Rotas/>
+    </BrowserRouter>
     </>
   )
 }

@@ -1,0 +1,29 @@
+.navLogin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    padding: 10px 10vw;
+}
+.navLogin .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #343a40;
+    font-size: 1rem;
+    gap: 10px;
+    cursor: pointer;
+    
+}
+.navLogin .logo b {
+    color: #2A7AE4;
+}
+
