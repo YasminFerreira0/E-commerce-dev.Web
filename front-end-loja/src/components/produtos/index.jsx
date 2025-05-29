@@ -45,7 +45,7 @@ export default function Produtos() {
                                 <h4>{item.nome}</h4>
                                 <p>R$ {item.valor.toFixed(2)}</p>
                             </div>
-                            <button onClick={() => addItem(item)}>
+                            <button className="btnComprar" onClick={() => addItem(item)}>
                                 Comprar
                             </button>
                         </div>

@@ -5,6 +5,8 @@ import Produtos from '../components/produtos';
 import Home from '../pages/home';
 import Dashboard from '../pages/dashboard';
 import RotasPrivadas from './rotasPrivadas';
+import CadastroProdutos from '../components/cadastroProdutos';
+import EditarProduto from '../components/editarProduto';
 
 export default function Rotas() {
     return (
@@ -25,6 +27,23 @@ export default function Rotas() {
                 element={
                     <RotasPrivadas>
                         <Dashboard />
+                    </RotasPrivadas>
+                }
+            />
+            <Route
+                path='/cadastroProdutos'
+                element={
+                    <RotasPrivadas>
+                        <CadastroProdutos />
+                    </RotasPrivadas>
+                }
+            />
+            
+            <Route
+                path='/editarProduto'
+                element={
+                    <RotasPrivadas>
+                        <EditarProduto />
                     </RotasPrivadas>
                 }
             />

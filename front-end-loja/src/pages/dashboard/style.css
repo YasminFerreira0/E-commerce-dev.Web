@@ -1,5 +1,5 @@
 .sideBar{
-    width: 20vw;
+    width: 16vw;
     height: 100vh;
     background-color: #f4f4f4;
     position: fixed;
@@ -7,41 +7,110 @@
     left: 0;
     padding: 20px;
 }
-
-/*.logoDash {
+.sideBarContent{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    text-decoration: none;
-    color: #343a40;
-    font-size: 0.9rem;
-    gap: 10px;
-    cursor: default;
+    height: 100%;
 }
-
-.logoDash b {
-    color: #2A7AE4;
-}*/
+.perfil{
+    width: 6vw;
+    border-radius: 50%;
+}
 
 .sideBar h2 {
     margin: 0;
-    padding: 25px 0;
-    font-size: 2rem;
+    padding: 20px 0;
+    font-size: 1.8rem;
     color: #303030;
-    font-weight: bold;
     cursor: default;
 }
 .sideBar ul {
     list-style: none;
-    padding: 0;
 }
 .sideBar ul li {
-    margin: 15px 0;
-}
-.sideBar ul li a {
-    text-decoration: none;
+    margin: 12px 0;
     color: #333;
-    font-size: 18px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
-.sideBar ul li a:hover {
+
+.sideBar ul li:hover {
     color: #007bff;
+}
+
+.btnSair, .btnCadastrar{
+    background-color: #2A7AE4;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: auto;
+}
+.btnSair:hover, .btnCadastrar:hover {
+    background-color: #1a5bbf;
+}
+
+.mainContent {
+    margin-left: 16vw;
+    height: 100vh;
+    padding: 10px;
+    overflow-y: auto;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    padding: 20px 1vw;
+    padding-right: 4vw;
+}
+.mainContent h1 {
+    font-size: 2rem;
+    color: #303030;
+}
+
+.content{
+    padding: 2rem 4rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+}
+.botoes{
+    display: flex;
+    justify-content: space-between; 
+    padding: 0.75rem 1rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-bottom: 0; 
+}
+
+.btnEdit{
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.btnEdit:hover{
+    background-color: #007bff;
+    color: white;
+}
+.btnTrash{
+    color: #dc3545;
+    border: 2px solid #dc3545;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.btnTrash:hover{
+    background-color: #dc3545;
+    color: white;
 }
