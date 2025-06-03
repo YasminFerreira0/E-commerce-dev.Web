@@ -3,26 +3,35 @@ import './style.css';
 import { RiCoupon2Line } from "react-icons/ri";
 
 export default function Carrinho({ carItens, setCarItens }) {
+    const mudarQuantidade = (index, operacao) => {
+        const novosItens = [...carItens];
+        const novasQuantidade = (novosItens[index].quantidade || 1) + operacao;
+        if (novasQuantidade < 1) {
+            novosItens.splice(index, 1);
+        }else{
+            novosItens[index].quantidade = novasQuantidade;
+        }
+        setCarItens(novosItens);
+    }
+
     return (
         <div className="carrinho">
             <section className="carrinho-quant">
-                <p>Seu carrinho tem <b>{carItens?.length} itens</b></p>
+                <p>Seu carrinho tem <b>{carItens.reduce((total, item) => total + (item.quantidade || 1), 0)} itens</b></p>
             </section>
 
             <section className="carrinho-itens">
                 < div>{carItens?.map((item, index) => (
                     <div className="iten" key={index}>
-                        <div >
-                            <img src={item.imagem} alt={item.nome} className="imagemProduto" />
-                        </div>
+                        <img src={item.imagem} alt={item.nome} className="imagemProduto" />
                         <div className="descricao">
-                            <p>{item.nome}</p>
-                            <div className="preco">
-                                <p><b>R$ {item.valor}</b></p>
+                            <p className='nome'>{item.nome}</p>
+                            <div className="linha-inferior">
+                                <p className='valor-unitario'><b>R$ {(item.valor).toFixed(2).replace('.', ',')}</b></p>
                                 <div className="btn-incluir">
-                                    <button className="menos">-</button>
-                                    <p className="quant">1</p>
-                                    <button className="mais">+</button>
+                                    <button className="menos" onClick={() => mudarQuantidade(index, -1)}>-</button>
+                                    <p className="quant">{item.quantidade || 1}</p>
+                                    <button className="mais" onClick={() => mudarQuantidade(index, 1)}>+</button>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +46,7 @@ export default function Carrinho({ carItens, setCarItens }) {
                         <h3>Total:</h3>
                         <p>
                             R${" "}
-                            {carItens?.reduce((total, item) => total + item.valor, 0).toFixed(2).replace(".", ",")}
+                            {carItens?.reduce((total, item) => total + item.valor * (item.quantidade || 1), 0).toFixed(2).replace(".", ",")}
                         </p>
                     </div>
 

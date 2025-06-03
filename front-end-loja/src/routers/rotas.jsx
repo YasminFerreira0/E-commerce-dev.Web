@@ -40,7 +40,7 @@ export default function Rotas() {
             />
             
             <Route
-                path='/editarProduto'
+                path='/editarProduto/:id'
                 element={
                     <RotasPrivadas>
                         <EditarProduto />
